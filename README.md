@@ -4,3 +4,7 @@ Simple sudoku solver using backtracking, just enter the sudoku puzzle you want t
 ## Requirements
 - Python 3
 - Pygame
+
+## To-do
+- Step by step backtracking visualizer
+- GUI input

@@ -1,8 +1,4 @@
 import pygame
-import sys
-from pygame.locals import *
-import random
-import time
 
 # colours
 WHITE = 255, 255, 255

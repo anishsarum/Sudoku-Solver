@@ -1,4 +1,4 @@
-# Sudoku Solver w/ GUI Output
+# Sudoku Solver, Step by Step
 Simple sudoku solver using backtracking, just enter the sudoku puzzle you want to solve as a 2D list and the solution will be outputted depending on the sudoku solver version used, e.g. sudokuSolver.py for CLI, and so on.
 
 ## Files

@@ -4,7 +4,7 @@ Simple sudoku solver using backtracking, just enter the sudoku puzzle you want t
 ## Files
 - sudokuSolver.py - CLI
 - sudokuSolverVisual.py - GUI Solution (requires Pygame)
-- sudokuSolverVisualSteps - GUI Step by Step Backtracking and Solution (requires Pygame)
+- sudokuSolverVisualSteps - GUI Step by Step Backtracking and Solution (requires Pygame). This might take quite a while so you can edit the FPS constant to adjust the speed of the backtracking steps.
 
 ## Requirements
 - Python 3

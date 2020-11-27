@@ -13,7 +13,7 @@ FPS = 60
 # initialising pygame
 pygame.init()
 pygame.display.set_caption("Sudoku Solver")
-numbers = pygame.font.SysFont("robotocondensed", 50)
+numbers = pygame.font.SysFont("notosans", 30)
 
 
 # window size
@@ -98,21 +98,18 @@ def solve(board, i=0, j=0):
 
 
 def main(board):
-    tile = [[None] * 9 for _ in range(9)]
-
-    for x in range(5, 9 * 50 + 5, 50):
-        for y in range(5, 9 * 50 + 5, 50):
-            tile[int((x + 45) / 50) - 1][int((y + 45) / 50) - 1] = pygame.Rect(x, y, 45, 45)
-
     while True:
         # refreshes screen each turn
         screen.fill(WHITE)
+        pygame.draw.line(screen, GREY, (0, 150), (500, 150), 1)
+        pygame.draw.line(screen, GREY, (0, 300), (500, 300), 1)
+        pygame.draw.line(screen, GREY, (150, 0), (150, 500), 1)
+        pygame.draw.line(screen, GREY, (300, 0), (300, 500), 1)
 
         for x in range(9):
             for y in range(9):
-                pygame.draw.rect(screen, GREY, tile[x][y])
                 number_text = numbers.render(str(board[y][x]), True, (0, 0, 0))
-                screen.blit(number_text, ((x+1)*50-45+12, (y+1)*50-45+7))
+                screen.blit(number_text, ((x+1)*50-45+10, (y+1)*50-45))
 
         solve(board)
 
@@ -124,22 +121,24 @@ if __name__ == "__main__":
     puzzle = eval(input("Enter puzzle here: "))
     main(puzzle)
 
-sampleBoard = [[9, 0, 0, 8, 1, 0, 0, 0, 0], \
-               [0, 0, 5, 0, 0, 4, 7, 0, 6], \
-               [0, 0, 0, 2, 0, 5, 8, 0, 1], \
-               [0, 9, 0, 7, 4, 0, 5, 0, 0], \
-               [0, 0, 0, 0, 0, 3, 0, 7, 0], \
-               [7, 4, 0, 0, 0, 0, 0, 0, 0], \
-               [3, 0, 0, 9, 5, 0, 6, 0, 0], \
-               [0, 0, 6, 4, 0, 0, 0, 1, 3], \
+sampleBoard = [[9, 0, 0, 8, 1, 0, 0, 0, 0],
+               [0, 0, 5, 0, 0, 4, 7, 0, 6],
+               [0, 0, 0, 2, 0, 5, 8, 0, 1],
+               [0, 9, 0, 7, 4, 0, 5, 0, 0],
+               [0, 0, 0, 0, 0, 3, 0, 7, 0],
+               [7, 4, 0, 0, 0, 0, 0, 0, 0],
+               [3, 0, 0, 9, 5, 0, 6, 0, 0],
+               [0, 0, 6, 4, 0, 0, 0, 1, 3],
                [1, 7, 0, 0, 0, 0, 0, 0, 4]]
 
-sampleBoard2 = [[5, 1, 7, 6, 0, 0, 0, 3, 4], \
-                [2, 8, 9, 0, 0, 4, 0, 0, 0], \
-                [3, 4, 6, 2, 0, 5, 0, 9, 0], \
-                [6, 0, 2, 0, 0, 0, 0, 1, 0], \
-                [0, 3, 8, 0, 0, 6, 0, 4, 7], \
-                [0, 0, 0, 0, 0, 0, 0, 0, 0], \
-                [0, 9, 0, 0, 0, 0, 0, 7, 8], \
-                [7, 0, 3, 4, 0, 0, 5, 6, 0], \
+sampleBoard2 = [[5, 1, 7, 6, 0, 0, 0, 3, 4],
+                [2, 8, 9, 0, 0, 4, 0, 0, 0],
+                [3, 4, 6, 2, 0, 5, 0, 9, 0],
+                [6, 0, 2, 0, 0, 0, 0, 1, 0],
+                [0, 3, 8, 0, 0, 6, 0, 4, 7],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 9, 0, 0, 0, 0, 0, 7, 8],
+                [7, 0, 3, 4, 0, 0, 5, 6, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+# [[9, 0, 0, 8, 1, 0, 0, 0, 0],[0, 0, 5, 0, 0, 4, 7, 0, 6],[0, 0, 0, 2, 0, 5, 8, 0, 1],[0, 9, 0, 7, 4, 0, 5, 0, 0],[0, 0, 0, 0, 0, 3, 0, 7, 0],[7, 4, 0, 0, 0, 0, 0, 0, 0],[3, 0, 0, 9, 5, 0, 6, 0, 0],[0, 0, 6, 4, 0, 0, 0, 1, 3],[1, 7, 0, 0, 0, 0, 0, 0, 4]]

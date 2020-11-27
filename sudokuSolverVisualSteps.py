@@ -2,7 +2,9 @@ import pygame
 
 # colours
 WHITE = 255, 255, 255
-GREY = 192, 192, 192
+GREY = 100, 100, 100
+BLACK = 0, 0, 0
+GREEN = 0, 120, 0
 
 # number of frames per second
 FPS = 60
@@ -10,7 +12,7 @@ FPS = 60
 # initialising pygame
 pygame.init()
 pygame.display.set_caption("Sudoku Solver")
-numbers = pygame.font.SysFont("robotocondensed", 50)
+numbers = pygame.font.SysFont("notosans", 30)
 
 
 # window size
@@ -89,10 +91,15 @@ def solve(board, i=0, j=0):
         screen.fill(WHITE)
         board[i][j] = e
 
+        pygame.draw.line(screen, GREY, (0, 150), (500, 150), 1)
+        pygame.draw.line(screen, GREY, (0, 300), (500, 300), 1)
+        pygame.draw.line(screen, GREY, (150, 0), (150, 500), 1)
+        pygame.draw.line(screen, GREY, (300, 0), (300, 500), 1)
+
         for x in range(9):
             for y in range(9):
-                number_text = numbers.render(str(board[y][x]), True, (0, 0, 0))
-                screen.blit(number_text, ((x+1)*50-45+12, (y+1)*50-45+7))
+                number_text = numbers.render(str(board[y][x]), True, BLACK)
+                screen.blit(number_text, ((x+1)*50-45+10, (y+1)*50-45))
 
         pygame.display.update()
         pygame.time.Clock().tick(FPS)
@@ -109,12 +116,17 @@ def main(board):
         # refreshes screen each turn
         screen.fill(WHITE)
 
+        solve(board)
+
+        pygame.draw.line(screen, GREY, (0, 150), (500, 150), 1)
+        pygame.draw.line(screen, GREY, (0, 300), (500, 300), 1)
+        pygame.draw.line(screen, GREY, (150, 0), (150, 500), 1)
+        pygame.draw.line(screen, GREY, (300, 0), (300, 500), 1)
+
         for x in range(9):
             for y in range(9):
-                number_text = numbers.render(str(board[y][x]), True, (0, 0, 0))
-                screen.blit(number_text, ((x+1)*50-45+12, (y+1)*50-45+7))
-
-        solve(board)
+                number_text = numbers.render(str(board[y][x]), True, GREEN)
+                screen.blit(number_text, ((x+1)*50-45+10, (y+1)*50-45))
 
         pygame.display.update()
         pygame.time.Clock().tick(FPS)

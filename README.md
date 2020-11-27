@@ -3,12 +3,12 @@ Simple sudoku solver using backtracking, just enter the sudoku puzzle you want t
 
 ## Files
 - sudokuSolver.py - CLI
-- sudokuSolverVisual.py - GUI (requires Pygame)
+- sudokuSolverVisual.py - GUI Solution (requires Pygame)
+- sudokuSolverVisualSteps - GUI Step by Step Backtracking and Solution (requires Pygame)
 
 ## Requirements
 - Python 3
-- Pygame (for sudokuSolverVisual.py)
+- Pygame (for sudokuSolverVisual.py and sudokuSolverVisualSteps.py)
 
 ## To-do
-- Step by step backtracking visualizer
 - GUI input

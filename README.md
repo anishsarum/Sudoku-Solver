@@ -1,5 +1,5 @@
 # Sudoku Solver w/ GUI Output
-Simple sudoku solver using backtracking, just enter the sudoku puzzle you want to solve, and then the solution will be outputted on a separate window using the Pygame library.
+Simple sudoku solver using backtracking, just enter the sudoku puzzle you want to solve as a 2D list and the solution will be outputted depending on the sudoku solver version used, e.g. sudokuSolver.py for CLI, and so on.
 
 ## Files
 - sudokuSolver.py - CLI
